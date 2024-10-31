@@ -1,7 +1,7 @@
 services:
   frigate:
     container_name: frigate
-    image: blakeblackshear/frigate:stable-amd64
+    image: blakeblackshear/frigate:stable
     restart: always
     volumes:
       - /home/homeassistant/frigate/frigate.yml:frigate.yml
