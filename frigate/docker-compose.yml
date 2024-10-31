@@ -5,7 +5,7 @@ services:
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      #- /home/homeassistant/frigate/frigate.yml:/config/frigate.yml
+      - C:\Users\ander\git\Home-Assistant\frigate\config\frigate.yml:/config/config.yml
     ports:
       - 5000:5000
       - 1935:1935

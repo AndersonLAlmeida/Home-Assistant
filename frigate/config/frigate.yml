@@ -1,0 +1,26 @@
+mqtt:
+  host: 192.168.1.19
+  port: 1883
+  topic_prefix: frigate
+  client_id: frigate
+  user: anderson
+  password: Metalica5
+
+cameras:
+  corredor:
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin:Metalica5@192.168.1.3:554/onvif1
+          roles:
+            - detect
+          input_args:
+            - "-rtsp_transport"
+            - "udp"
+    objects:
+      track:
+        - person
+detectors:
+  cpu1:
+    type: cpu
+  cpu2:
+    type: cpu
