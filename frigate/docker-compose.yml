@@ -1,12 +1,13 @@
 services:
-  homeassistant:
-    container_name: homeassistant
-    image: "ghcr.io/home-assistant/home-assistant:stable"
-    ports:
-      - "8123:8123"
+  frigate:
+    container_name: frigate
+    image: blakeblackshear/frigate:stable-amd64
+    restart: always
     volumes:
-      - /opt/homeassistant/config:/config
-      - /etc/localtime:/etc/localtime:ro
-    restart: unless-stopped
-    privileged: true
-    # network_mode: host
+      - /home/homeassistant/frigate/frigate.yml:frigate.yml
+      - /etc/localtime:/etc/localtime
+    ports:
+      - 5000:5000
+      - 1935:1935
+    environments:
+      FRIGATE_RTSP_PASSWORD: "Metalica5"
