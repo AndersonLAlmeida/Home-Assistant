@@ -4,8 +4,8 @@ services:
     image: "blakeblackshear/frigate:0.11.1"
     restart: always
     volumes:
-      - /home/homeassistant/frigate/frigate.yml:frigate.yml
-      - /etc/localtime:/etc/localtime
+      - /etc/localtime:/etc/localtime:ro
+      #- /home/homeassistant/frigate/frigate.yml:/config/frigate.yml
     ports:
       - 5000:5000
       - 1935:1935
